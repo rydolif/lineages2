@@ -1,55 +1,381 @@
 @import "libs"
 @import "base"
 
-img
-	max-width: 100%
+body
+	padding-top: 265px
+
+.bunner
+	position: absolute
 	width: 100%
+	z-index: -1
+	left: 0
+	right: 0
+
+	&--top
+		top: 0
+
+	&--bottom
+		bottom: 0
 
 .container
 	width: 100%
-	max-width: 1200px
+	max-width: 1500px
 	padding: 0 15px
 	margin: 0 auto
 
-	+r(1200)
-		max-width: 992px
-
-	+r(992)
-		max-width: 768px
-
+	+r(1500)
+		max-width: 1200px
 
 .header
-	position: fixed
-	top: 0
-	right: 0
-	left: 0
+	margin-bottom: 10px
 
 	&__container
+		+between
+		background-color: $bg
+		padding: 15px 20px
+		border-radius: 3px
+
+		+r(1500)
+			padding: 10px
+
+	&__wrap
 		+between
 
 	&__logo
-		img
-			width: 130px
-			height: auto
-
-
-.nav
-	ul
-		+between
-
-	li
+		width: 100px
 		margin-right: 25px
 
+		+r(1500)
+			margin-right: 15px
+
+		img
+			width: 100%
+			height: auto
+
+	h1
+		font-size: 24px
+		text-transform: uppercase
+		letter-spacing: 1.5px
+		margin-right: 55px
+
+		+r(1500)
+			margin-right: 15px
+			font-size: 20px
+
+	&__lang
+		+between
+
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 50%
+			width: 30px
+			height: 30px
+			opacity: 0.6
+			margin-right: 12px
+
+			&:last-child
+				margin-right: 0
+		
+		img
+			width: 100%
+			height: 100%
+			border-radius: 50%
+		
+		&_active
+			opacity: 1 !important
+
+	.dropdown
+		margin-right: 20px
+		
 		&:last-child
 			margin-right: 0
 
+		&-menu
+			background-color: #434447
+			max-height: 250px
+			overflow: auto
+
+		a
+			color: #ffffff
+
+			&:hover,
+			&:focus
+				color: $bg
 
 .main
-	+cover
 
+	&__container
+		+between
+		align-items: flex-start
+
+	&__content
+		width: 79%
+
+		+r(1500)
+			width: 74%
+
+	&__table
+		width: 49%
+		border-spacing: 0 5px
+		border-collapse: inherit
+
+		+r(1500)
+			+last
+			width: 100%
+			margin-bottom: 10px
+
+		&_header
+			text-transform: uppercase
+			font-weight: 600
+			border: none !important
+
+		tr
+			background-color: #28292b
+			border-radius: 3px
+			margin-bottom: 5px
+			line-height: 1
+
+		td, th
+			padding: 10px 8px
+
+			+r(1500)
+				padding: 5px
+
+		th
+			font-weight: 600
+			background-color: rgba(#fff, .09) !important
+			font-size: 14px
+
+			b
+				color: #ff9300
+
+		td
+			font-size: 12px
+			min-width: 45px
+			white-space: nowrap
+			border-bottom: 2px solid #1a1b1d
+
+			&:first-child
+				width: 45%
+
+		img
+			margin-top: -3px
+			margin-right: 5px
+
+		p
+			text-transform: uppercase
+			font-size: 14px
+
+
+		&_accent
+			color: $accent
+
+			b
+				color: #ff9300
+
+		span
+			color: #f1e1c5
+
+	&__wrap
+		+last
+		+between
+		align-items: flex-start
+		background-color: #2c2d30
+		padding: 10px
+		margin-bottom: 10px
+		border-radius: 3px
+
+		+r(1500)
+			padding: 5px
+
+		tr:last-child
+			td
+				border: none
+
+		&--two
+			tr
+				background-color: transparent
+			
+			td
+				border-bottom: 1px solid #1f2020
+
+	&__nav
+		width: 20%
+
+		+r(1500)
+			width: 25%
+
+		&_wrap
+			+last
+			background-color: #2b2c2f
+			padding: 10px
+			margin-bottom: 10px
+
+		&_form
+
+		&_select
+			display: flex
+			justify-content: space-between
+			margin-bottom: 10px
+
+			select
+				width: 47%
+
+		&_btn
+			border: 1px solid #ff9300
+			width: 200px
+			color: #ff9300
+			margin: 0 auto 20px
+
+			&:hover,
+			&:focus
+				border: 1px solid #ff9300
+				color: #ff9300
+
+		&_radio
+			+last
+			display: flex
+			flex-wrap: wrap
+			margin-bottom: 15px
+
+			div
+				width: 30%
+				margin-right: 3%
+
+			label
+				position: relative
+				display: flex
+				justify-content: center
+				align-items: center
+				height: 35px
+				color: #fff
+				cursor: pointer
+				margin-bottom: 0
+				margin-right: 0
+				background-color: #424245
+				font-size: 12px
+				border-radius: 3px
+				box-shadow: 0 0 3px 0 rgba(#000, .6)
+				margin-bottom: 10px
+				font-weight: 600
+
+			input[type="checkbox"]
+				display: none
+
+			input[type="checkbox"]:checked + label
+				background-color: $accent
+				color: $bg
+
+		&_bunner
+			display: block
+			border-radius: 3px
+			padding: 3px
+
+			img
+				width: 100%
+
+		&_time
+
+			p
+				text-align: center
+				background-color: #333536
+				margin-bottom: 10px
+				padding: 10px
+				text-transform: uppercase
+				border-radius: 3px
+				font-weight: 700
+
+.datepicker
+	width: 100%
+	background-color: transparent
+	border-color: transparent !important
+	font-size: 14px
+
+	&--cell
+		color: #ffffff
+		background-color: #303134
+		border: 2px solid #2c2d30
+		height: 36px
+
+		&:hover,
+		&:focus,
+		&:active
+			color: $bg
+			background-color: $accent
+	
+	&--nav
+		border: 1px solid transparent
+		border-bottom: 1px solid #000
+
+		&-title
+			+transition
+			color: $accent
+			text-transform: uppercase
+			font-weight: 600
+
+			&:hover
+				color: $bg
+
+				i
+					color: $bg
+
+			i
+				color: $accent
+				+transition
+		
+	&--day-name
+		color: #ffffff
+
+	&--cell-day.-other-month-,
+	&--cell-year.-other-decade-
+		color: #7c7c7c
+
+	.-selected-,
+	.-selected-.-current-
+		background-color: #ff9300
+
+.info
+	padding-top: 70px
+	padding-bottom: 60px
+
+	h2
+		text-transform: uppercase
+		margin-bottom: 15px
+		color: #dcdcdc
+		font-size: 20px
+	
+	p
+		+last
+		font-weight: 600
+		font-size: 12px
+		color: #a2a2a2
+		margin-bottom: 15px
 
 .footer
+	padding-bottom: 20px
+
 	&__container
+		+between
+
+	p
+		width: 33%
+		font-size: 12px
+		color: #a2a2a2
+
+		&:nth-child(2)
+			text-align: center
+
+		&:nth-child(3)
+			text-align: right
+
+	a
+		color: $accent
+
+		&:hover,
+		&:focus
+			color: #ff9300
 
 
 @import "page"
