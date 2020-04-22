@@ -46,7 +46,8 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',  			//----jquery
 		'app/libs/jquery.popupoverlay.js', 				//----модалки
-		'app/libs/bootstrap/js/bootstrap.min.js', 				//----модалки
+		'app/libs/jquery.mask.min.js', 				//----модалки
+		'app/libs/jquery.validate.js', 				//----модалки
 		'app/libs/cal/datepicker.min.js', 				//----модалки
 		'app/js/common.js', // Always at the end
 		])
