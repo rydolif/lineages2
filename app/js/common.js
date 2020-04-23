@@ -5,6 +5,10 @@ $(function () {
 
 
   $('.modal').popup({transition: 'all 0.3s'});
+
+  $('select').styler({
+    selectSearch: true
+  });
   
 })
 
