@@ -12,3 +12,17 @@ $(function () {
   
 })
 
+
+
+var eventDates = 1;
+
+$('.datepicker-here').datepicker({
+  // Передаем функцию, которая добавляет 11 числу каждого месяца класс 'my-class'
+  onRenderCell: function(date, cellType) {
+      if (cellType == 'day' && date.getDate() == eventDates) {
+          return {
+              classes: 'my-class',
+          }
+      }
+  }
+})

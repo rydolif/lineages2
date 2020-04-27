@@ -77,8 +77,25 @@
 		+between
 
 	&__logo
+		position: relative
 		width: 100px
 		margin-right: 25px
+		z-index: 1
+
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 60px
+			height: 30px
+			background-color: #ff9300
+			z-index: -1
+			opacity: .1
+			box-shadow: 0 0 50px 50px #ff9300
+			z-index: 1
 
 		+r(1500)
 			margin-right: 15px
@@ -113,6 +130,9 @@
 		+r(992)
 			width: 70%
 			margin-bottom: 10px
+		
+		+r(576)
+			width: 83%
 
 		+r(480)
 			font-size: 14px
@@ -270,7 +290,7 @@
 		&_item
 			display: flex
 			align-items: center
-			justify-content: space-around
+			justify-content: space-between
 			width: 100%
 			height: 40px
 			background-color: #28292b
@@ -279,10 +299,17 @@
 			line-height: 1
 			color: #ffffff
 			box-shadow: 0 3px 3px 0 rgba(#000, .4)
+			padding: 5px 8px
+
+			+r(1500)
+				padding: 5px
 
 			+r(576)
 				display: grid
-				grid-gap: 5px
+				height: 45px
+				padding: 3px
+				
+				
 
 			&:hover
 				p
@@ -300,6 +327,7 @@
 				+r(576)
 					grid-row: 1 / 4
 					grid-column: 4 / 5
+					flex-direction: row-reverse
 
 				a
 					+cover
@@ -473,7 +501,7 @@
 			&:focus
 				border: 1px solid #ff9300
 				color: $bg
-				background-color: #ff9300
+				background-color: #ff9300 !important
 
 		&_radio
 			+last
@@ -551,6 +579,9 @@
 	border-color: transparent !important
 	font-size: 14px
 
+	&--cell.-current-
+		color: #ff9300
+
 	&--cell
 		color: #ffffff
 		background-color: #303134
@@ -561,15 +592,19 @@
 		&:focus,
 		&:active
 			color: $bg
-			background-color: $accent
-	
+			background-color: #ff9300
+
+	.my-class
+		background-color: #3b3c3d
+		color: #ff9300
+
 	&--nav
 		border: 1px solid transparent
 		border-bottom: 1px solid #000
 
 		&-title
 			+transition
-			color: $accent
+			color: #ff9300
 			text-transform: uppercase
 			font-weight: 600
 
@@ -580,11 +615,12 @@
 					color: $bg
 
 			i
-				color: $accent
+				color: #ff9300
 				+transition
 		
 	&--day-name
 		color: #ffffff
+
 
 	&--cell-day.-other-month-,
 	&--cell-year.-other-decade-
@@ -593,7 +629,7 @@
 	.-selected-,
 	.-selected-.-current-
 		background-color: #ff9300
-
+		color: #ffffff
 
 .info
 	padding-top: 70px
@@ -636,6 +672,9 @@
 	h2
 		font-size: 22px
 		margin-bottom: 15px
+
+		+r(576)
+			padding: 10px 5px 0 10px
 
 	&__content
 		background-color: $bg
@@ -798,8 +837,13 @@
 				color: #00ad5d
 
 		&_minus
+			margin-top: 15px
+
 			b
 				color: #f24841
+
+		&_comment
+			margin-top: 15px
 
 	&__btn
 		display: flex
@@ -868,6 +912,10 @@
 			font-size: 18px
 			background-color: #545556
 			color: #f1e1c5
+
+			&:hover,
+			&:focus
+				background-color: #909091
 
 			+r(767)
 				height: 35px
@@ -1017,6 +1065,27 @@
 		+r(576)
 			flex-direction: column
 
+	&__logo
+		position: relative
+		display: block
+		// box-shadow: 0 0 30px 10px rgba(#ff9300, .1)
+
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 130px
+			height: 30px
+			background-color: #ff9300
+			z-index: -1
+			opacity: .1
+			box-shadow: 0 0 50px 50px #ff9300
+			z-index: 1
+
+
 	p
 		width: 33%
 		font-size: 12px
@@ -1040,6 +1109,8 @@
 		&:hover,
 		&:focus
 			color: $accent
+			
+
 
 
 @import "page"
